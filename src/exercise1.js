@@ -10,7 +10,7 @@ const sortProduct = input => {
       acc[item.name].push(object);
     }
     return acc;
-  }, {})
+  }, {});
 };
 
 module.exports = {
