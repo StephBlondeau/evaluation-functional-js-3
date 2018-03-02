@@ -1,17 +1,16 @@
 const moment = require("moment");
 
 const sortProduct = input => {
-  // Parcourt de l'input avec reduce
-  var product = [];
-   product = input.reduce(acc, item => {
-     var day = moment(item.dateAdded);
-     if(day.year() > 2000){
-       acc.push(item);
-       return acc;
-     }else{
-       return acc;
-     }
-   },[])
+  return product = input.reduce(acc, item => {
+    var day = moment(item.dateAdded);
+    if(day.year() > 2000){
+      var object = {
+        name: item.name, year: day.year(), monthOfYear: day.monthOfYear(), quantity: item.quantity
+      };
+      acc[item.name].push(object);
+    }
+    return acc;
+  }, {})
 };
 
 module.exports = {
